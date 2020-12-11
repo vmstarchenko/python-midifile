@@ -17,6 +17,7 @@ extensions = [
         ],
         include_dirs=["src/midifile/include", "src"],
         extra_compile_args=["-O3"],
+        # extra_compile_args=["-O0", "-g", "-fsanitize=address", "-Wall", "-static-libasan"],
         language="c++",
     ),
 ]
@@ -46,6 +47,7 @@ setup(
     ext_modules=cythonize(
         extensions,
         language_level=3,
+        # annotate=True,
     ),
     install_requires=[],
     zip_safe=True,

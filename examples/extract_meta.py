@@ -1,3 +1,5 @@
+import sys
+
 import os
 from midifile import MidiFile
 import json
@@ -51,7 +53,8 @@ def parse_args():
 
 def main():
     args = parse_args()
-    meta = get_meta(args.path)
+    for i in range(100):
+        meta = get_meta(args.path)
     print(json.dumps(meta, indent=4, sort_keys=True))
 
 
